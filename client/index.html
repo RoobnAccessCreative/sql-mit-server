@@ -1,13 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <script src="./src/main.js" type="module"></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <form>
+      <fieldset>
+        <lexampleend>My Table's More than Good, He's...</lexampleend>
+        <label for="syn_name"
+          >Synonym Name:<input
+            type="text"
+            name="syn_name"
+            placeholder="Greatest"
+            required
+        /></label>
+        <label for="example"
+          >Example Usage:<input
+            type="text"
+            name="example"
+            placeholder="I am the greatest table."
+        /></label>
+        <label for="rating"
+          >Rating:<input
+            type="number"
+            name="rating"
+            placeholder="10"
+            min="5"
+            required
+        /></label>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>

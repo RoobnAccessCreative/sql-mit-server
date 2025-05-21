@@ -1,9 +1,11 @@
 import express from "express";
 import pg from "pg";
 import dotenv from "dotenv";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 dotenv.config();
 
@@ -37,6 +39,7 @@ app.get("/gimme", async (req, res) => {
 
 app.post("/flatterMe", (req, res) => {
   const insert = req.body;
+  insert.example = insert.example ? insert.example : "";
   const query = db.query(
     `INSERT INTO the_best_table_of_them_all (syn_name, example, rating) VALUES($1, $2, $3)`,
     [insert.syn_name, insert.example, insert.rating]

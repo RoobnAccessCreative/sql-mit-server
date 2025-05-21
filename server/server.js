@@ -46,3 +46,32 @@ app.post("/flatterMe", (req, res) => {
   );
   const response = res.json(query);
 });
+
+app.get("/pokemon", (req, res) => {
+  const colqry = req.query.colour;
+  const monqry = req.query.name;
+  console.log(colqry);
+  let allPokemon = [
+    { name: "Pikachu", colour: "yellow" },
+    { name: "Charmander", colour: "red" },
+    { name: "Squirtle", colour: "blue" },
+    { name: "Horsea", colour: "blue" },
+    { name: "Jolteon", colour: "yellow" },
+  ];
+
+  colqry
+    ? (allPokemon = allPokemon.filter((mon) => mon.colour === colqry))
+    : null;
+
+  console.log(allPokemon);
+
+  monqry
+    ? (allPokemon = allPokemon.filter(
+        (mon) => mon.name.toLowerCase() === monqry
+      ))
+    : null;
+
+  console.log(allPokemon);
+
+  res.json(allPokemon);
+});

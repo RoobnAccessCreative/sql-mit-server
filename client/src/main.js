@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {
   // it adds the values to the object
   const values = Object.fromEntries(formData);
 
-  fetch("http://localhost:8080/flatterMe", {
+  fetch("https://sql-mit-server.onrender.com/flatterMe", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
